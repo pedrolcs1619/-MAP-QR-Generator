@@ -1,18 +1,18 @@
 # myapp/api/v1/viewsets.py
 
 from django.contrib.auth import authenticate
-from django.contrib.auth.models import User
+
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-from .serializers import (
-    UserRegistrationSerializer, 
-    UserLoginSerializer, 
-    UserProfileSerializer,
-    ChangePasswordSerializer
-)
+from .serializers.RegistrationSerializer import (UserRegistrationSerializer)
+from .serializers.LoginSerializer import(UserLoginSerializer)
+from .serializers.ProfileSerializer import(UserProfileSerializer)
+from .serializers.ChangePasswordSerializer import(ChangePasswordSerializer)
+    
+
 
 
 class AuthViewSet(viewsets.GenericViewSet):

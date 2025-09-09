@@ -2,7 +2,7 @@
 # myapp/api/v1/router.py
 
 from rest_framework.routers import DefaultRouter
-from .viewsets import AuthViewSet
+from ..viewsets.authViewSet import AuthViewSet
 
 router = DefaultRouter()
 router.register(r'auth', AuthViewSet, basename='auth')
